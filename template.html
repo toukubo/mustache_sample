@@ -1,0 +1,28 @@
+<center>
+
+{{#notes}}
+<div style="padding-bottom:50px" id="note_{{id}}">
+    <!--<div class="circle" style="font-size: 12em;padding-bottom:5px;text-align: center;">◯</div>-->
+    <div style="font-size: 4em">
+        <span style="text-decoration:none;color:#000;" class="time">{{r}}</span>
+        <br />
+        ↑
+        <br />
+
+        <span style="text-decoration:none;color:#000;" class="time">{{c}}</span>
+    </div>
+
+    <div class="complete" style="font-size: 1.8em">
+
+        <div id="timerActions" style="font-size: 4em">
+        <a  href="#" onclick="hot('{{id}}');" style="font-size: 1.5em">○</a>
+        <a  href="#" onclick="nothot('{{id}}');" style="padding-left:50px">☓</a>
+
+
+        <a href="evernote:///view/2337826/s21/{{guid}}/{{guid}}/" style="color: #ffffff;background-color: #009900;font-weight: bold;"></a><br />
+        </div>
+    </div>
+</div>
+
+{{/notes}}
+</center>

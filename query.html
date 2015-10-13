@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=320px,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script src="mustache.js"></script>
+    <script src="render.js"></script>
+    <script src="gup.js"></script>
+    <script src="utils.js"></script>
+    <!--<script src="countdown.js"></script>-->
+
+    <script>
+        function loadData(query,micro){
+            var url = "http://50.116.21.222:8080/SearchNotesServlet?query="+query;
+            render(url);
+            running = true;
+            countDown();
+
+        }
+        $(document).ready(function () {
+            var query = gup("query");
+            loadData(query)
+
+        });
+        var running = false;
+        var start = 60*getTime();
+        var passed = 0;
+        var left = start;
+        function togglepanel(){
+            $('#headerpanel').toggle();
+        }
+    </script>
+    <link href='style.css' type='text/css' rel='stylesheet'>
+
+    <title></title>
+</head>
+<body>
+<a href="#" onclick="togglepanel();">三</a>
+<div style="display: none;" id="headerpanel">
+
+
+    <h3>search</h3>
+    <form action="query.html" method="get">
+        <input type="text" name="query" />
+        <input type="submit" value="submit"/>
+
+    </form>
+</div>
+<div id="main">
+
+</div>
+<div id="loading" style="display: none;">
+    <img src="ajax-loader.gif" />
+</div>
+</body>
+</html>

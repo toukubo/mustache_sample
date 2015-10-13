@@ -1,0 +1,27 @@
+
+{{#notes}}
+<div style="height:600px" id="{{guid}}">
+    <!--<div class="circle" style="font-size: 12em;padding-bottom:5px;text-align: center;">◯</div>-->
+    <div id="mode" style="background-color: #000000;color: #ffffff;font-size: 1.3em;">task</div>
+
+    <!--onclick="markItDone('{{guid}}')"-->
+    <div class="complete" style="font-size: 1.8em">
+        <a href="clever:///toukubo/notes/?q={{title}}" style="color: #ffffff;background-color: #00ff00;font-weight: bold;">{{title}}</a><br />
+        <div style="font-size: 0.7em">
+            <a href="writeapp://x-callback-url/note?title={{title}}&content={{content}}">Write</a>
+            <a href="simplenote://new?content={{title}}{{content}}">Simplenote</a>
+            <div >
+                {{#tags}}
+                <a href="index.html?query=tag:{{name}}" style="background-color: #ff0000;color:#ffffff;font-size: 0.8em;">{{name}}</a>
+                {{/tags}}
+                in:<a href="clever:///toukubo/notes/?q=notebook:{{ notebook.name }}">{{ notebook.name }}</a>
+
+            </div>
+            <hr />
+            <a href="#" onclick="breakTimer();" id="breaker" style="color: #010101; padding-top: 20px;"> - interupt -</a>
+            <a href="#" onclick="restart();" id="restarter" style="display: none;color: #010101"> - restart -</a>
+            <a href="#" onclick="toggleMode();" id="toggleMode" style="color: #010101"> - toggle mode -</a>
+        </div>
+    </div>
+</div>
+{{/notes}}
